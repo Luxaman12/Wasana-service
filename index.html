@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wasana Service</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <div id="toast"></div>
+  <section id="loginPage" class="auth-page">
+    <div class="auth-card">
+      <div class="brand">✦ Wasana Service</div>
+      <p class="muted">Secure Deposit & Withdrawal Management</p>
+      <div class="tabs"><button class="tab active" data-auth="login">LOGIN</button><button class="tab" data-auth="register">CREATE ACCOUNT</button></div>
+      <form id="loginForm">
+        <label>Customer ID / Admin ID<input id="loginId" required placeholder="CUS-100001"></label>
+        <label>Password<input id="loginPassword" type="password" required placeholder="••••••••"></label>
+        <button class="primary wide">LOGIN</button>
+        <button type="button" class="link-btn" id="forgotBtn">Forgot Password?</button>
+      </form>
+      <form id="registerForm" class="hidden">
+        <label>Full Name<input id="regName" required></label>
+        <label>Mobile Number<input id="regMobile" required></label>
+        <label>Email Address<input id="regEmail" type="email" required></label>
+        <label>Date of Birth<input id="regDob" type="date" required></label>
+        <label>Address<textarea id="regAddress" required></textarea></label>
+        <label>Password<input id="regPassword" type="password" required></label>
+        <label>Confirm Password<input id="regConfirm" type="password" required></label>
+        <button class="primary wide">CREATE ACCOUNT</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="customerApp" class="hidden">
+    <header class="topbar"><div class="brand">✦ Wasana Service</div><div class="top-actions"><button id="notifBtn">🔔 <span id="notifCount" class="count">0</span></button><button id="logoutBtn">Logout</button></div></header>
+    <main id="customerContent"></main>
+    <nav class="bottom-nav">
+      <button data-page="home">⌂<span>HOME</span></button><button data-page="transactions">▤<span>TRANSACTIONS</span></button><button data-page="support">◉<span>SUPPORT</span></button><button data-page="profile">◯<span>PROFILE</span></button>
+    </nav>
+  </section>
+
+  <section id="adminApp" class="hidden">
+    <header class="topbar"><div class="brand">✦ Wasana Service <small>ADMIN</small></div><div class="top-actions"><span id="adminSync">● Live</span><button id="adminLogout">Logout</button></div></header>
+    <div class="admin-layout">
+      <aside class="sidebar">
+        <button data-admin="dashboard">Dashboard</button><button data-admin="customers">Customers</button><button data-admin="kyc">KYC Verification</button><button data-admin="deposits">Deposits</button><button data-admin="withdrawals">Withdrawals</button><button data-admin="transactions">Transactions</button><button data-admin="banks">Bank Management</button><button data-admin="support">Support</button><button data-admin="settings">Settings</button>
+      </aside>
+      <main id="adminContent"></main>
+    </div>
+  </section>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
